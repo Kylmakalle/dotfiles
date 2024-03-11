@@ -1,0 +1,120 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_macos: true
+configure_dock: true
+
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - 'System Settings'
+  - Safari
+  - Messages
+  - Maps
+  - FaceTime
+  - Contacts
+  - Freeform
+  - Music
+  - Photos
+
+dockitems_persist:
+  - name: "Telegram Desktop"
+    path: "/Applications/Telegram Desktop.app/"
+    pos: 1
+  - name: "Slack"
+    path: "/Applications/Slack.app/"
+    pos: 2
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
+    pos: 3
+  - name: "Github Desktop"
+    path: "/Applications/Github Desktop.app/"
+    pos: 4
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 5
+  # Xcode after
+  - name: "Terminal"
+    path: "/System/Applications/Utilities/Terminal.app/"
+    pos: 7
+  - name: "Mail"
+    path: "/Applications/Mail.app/"
+    pos: 8
+  - name: "Reminders"
+    path: "/System/Applications/Reminders.app/"
+    pos: 9
+  - name: "Notes"
+    path: "/System/Applications/Notes.app/"
+    pos: 10
+  - name: "MongoDB Compass"
+    path: "/Applications/MongoDB Compass.app/"
+    pos: 11
+  - name: "Calendar"
+    path: "/System/Applications/Calendar.app/"
+    pos: 12
+  - name: "Home"
+    path: "/System/Applications/Home.app/"
+    pos: 13
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+    pos: 14
+
+
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - ffmpeg
+  - cmake
+  - gettext
+  - git
+  - gpg
+  - iperf
+  - node
+  - nvm
+  - rbenv
+  - pyenv
+  - openjdk@11
+  - ssh-copy-id
+  - openssl
+  - wget
+  - aria2 # Xcodes downloader
+  - gh
+
+homebrew_taps: []
+
+homebrew_cask_accept_external_apps: true
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - raycast
+  - google-chrome
+  - visual-studio-code
+  - xcodes
+  - homebrew/cask-versions/github-beta
+  - homebrew/cask-versions/telegram-desktop-beta
+  - keka
+  - docker
+  - utm
+  - slack
+  - jetbrains-toolbox
+  - handbrake
+  - spotify
+  - mongodb-compass
+  - google-drive
+  - spotify
+  - figma
+  - homebrew/cask-versions/qbittorrent-lt20
+  - poedit
+  - discord
+  - zoom
+  - vlc
+  - emacs
+  - rectangle
+  - shottr
+  - dynamic-dark-mode
+  # TODO: Wireguard client
+  # TODO: iBar alternative
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
