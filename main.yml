@@ -43,6 +43,10 @@
       when: configure_macos
       tags: ['macos']
 
+    - name: Activate git-lfs
+      command: "git lfs install"
+      changed_when: false 
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
