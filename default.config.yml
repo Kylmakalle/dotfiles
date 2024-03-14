@@ -69,6 +69,7 @@ homebrew_installed_packages:
   - cmake
   - gettext
   - git
+  - git-lfs
   - gpg
   - iperf
   - node
