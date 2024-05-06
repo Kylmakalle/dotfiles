@@ -14,6 +14,8 @@ source ./setup-brew.sh
 
 Scripts will set up a mandatory execution environment and install some basic programs from `default.config.yml`, as well as altering macOS preferences.
 
+`Ensure crontab` step may require manual approval for "Administrating computer".
+
 (Optionally) Run setup with sudo to alter some NVRAM settings:
 
 ```shell

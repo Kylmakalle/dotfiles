@@ -46,6 +46,23 @@
     - name: Activate git-lfs
       command: "git lfs install"
       changed_when: false 
+    
+    - name: Ensure notes-backup repo
+      git:
+        repo: "git@github.com:Kylmakalle/backup-notes"
+        dest: "/Users/{{ lookup('env', 'USER') }}/backup-notes"
+        force: yes  # Optional: if yes, any local changes will be discarded
+      tags: ['backup']
+
+    - name: Ensure crontab for backup-notes
+      cron:
+        name: "Backup and sync notes"
+        special_time: "daily"
+        job: "cd /Users/{{ lookup('env', 'USER') }}/backup-notes && make && make sync"
+        user: "{{ lookup('env', 'USER') }}"
+        backup: true
+        state: present
+      tags: ['backup']
 
     - name: Run post-provision task files in a block.
       tags: ['post']
