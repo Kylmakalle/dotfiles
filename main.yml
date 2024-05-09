@@ -10,7 +10,7 @@
       include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+      tags: ["always"]
     # geerlingguy.mac.homebrew relies on external hardcoded PATH. Let's try to add at least brew paths.
     - name: Ensure ~/.zprofile exists
       copy:
@@ -22,14 +22,14 @@
         state: present
         path: "/Users/{{ lookup('env', 'USER') }}/.zprofile"
         line: eval "$({{ (ansible_machine == 'arm64') | ternary('/opt/homebrew', '/usr/local') }}/bin/brew shellenv)"
-      tags: ['homebrew']
+      tags: ["homebrew"]
 
   roles:
     - role: geerlingguy.mac.homebrew
-      tags: ['homebrew']
+      tags: ["homebrew"]
     - role: geerlingguy.mac.dock
       when: configure_dock
-      tags: ['dock']
+      tags: ["dock"]
 
   tasks:
     - name: Disable brew analytics
@@ -41,31 +41,45 @@
       script: setup-macos.sh
       changed_when: false
       when: configure_macos
-      tags: ['macos']
+      tags: ["macos"]
 
     - name: Activate git-lfs
       command: "git lfs install"
-      changed_when: false 
-    
+      changed_when: false
+
     - name: Ensure notes-backup repo
       git:
         repo: "git@github.com:Kylmakalle/backup-notes"
         dest: "/Users/{{ lookup('env', 'USER') }}/backup-notes"
-        force: yes  # Optional: if yes, any local changes will be discarded
-      tags: ['backup']
+        # force: yes  # Optional: if yes, any local changes will be discarded
+      tags: ["backup"]
 
-    - name: Ensure crontab for backup-notes
-      cron:
-        name: "Backup and sync notes"
-        special_time: "daily"
-        job: "cd /Users/{{ lookup('env', 'USER') }}/backup-notes && make && make sync"
-        user: "{{ lookup('env', 'USER') }}"
-        backup: true
-        state: present
-      tags: ['backup']
+    - name: Create LauchAgents directory
+      file:
+        path: "{{ ansible_env.HOME }}/Library/LaunchAgents"
+        state: directory
+        recurse: yes
+        mode: "u=rwx,g=,o="
+      tags: ["backup"]
+
+    - name: Ensure backup job definition is in place
+      ansible.builtin.template:
+        src: backup-notes.plist.j2
+        dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/com.akentev.backup-notes.plist"
+        mode: "0644"
+      vars:
+        Land: "&amp;&amp;"
+      tags: ["backup"]
+
+    - name: Ensure backup job is enabled and running
+      community.general.launchd:
+        name: com.akentev.backup-notes
+        state: started
+        enabled: true
+      tags: ["backup"]
 
     - name: Run post-provision task files in a block.
-      tags: ['post']
+      tags: ["post"]
       block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"

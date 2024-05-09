@@ -114,6 +114,7 @@ homebrew_cask_apps:
   - rectangle
   - shottr
   - dynamic-dark-mode
+  - mountain-duck
   # TODO: Wireguard client
   # TODO: iBar alternative
 
