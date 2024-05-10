@@ -47,11 +47,13 @@
       command: "git lfs install"
       changed_when: false
 
-    - name: Ensure notes-backup repo
+    - name: Ensure backup repositories in place
       git:
-        repo: "git@github.com:Kylmakalle/backup-notes"
-        dest: "/Users/{{ lookup('env', 'USER') }}/backup-notes"
-        # force: yes  # Optional: if yes, any local changes will be discarded
+        repo: "git@github.com:Kylmakalle/{{ item }}"
+        dest: "/Users/{{ lookup('env', 'USER') }}/{{ item }}"
+      loop:
+        - backup-notes
+        - backup-reminders
       tags: ["backup"]
 
     - name: Create LauchAgents directory
@@ -64,18 +66,24 @@
 
     - name: Ensure backup job definition is in place
       ansible.builtin.template:
-        src: backup-notes.plist.j2
-        dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/com.akentev.backup-notes.plist"
+        src: "{{ item }}.plist.j2"
+        dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/com.akentev.{{ item }}.plist"
         mode: "0644"
       vars:
         Land: "&amp;&amp;"
+      loop:
+        - backup-notes
+        - backup-reminders
       tags: ["backup"]
 
     - name: Ensure backup job is enabled and running
       community.general.launchd:
-        name: com.akentev.backup-notes
+        name: "com.akentev.{{ item }}"
         state: started
         enabled: true
+      loop:
+        - backup-notes
+        - backup-reminders
       tags: ["backup"]
 
     - name: Run post-provision task files in a block.
