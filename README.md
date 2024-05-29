@@ -80,6 +80,10 @@ Unfortunately, not everything can be automated, here's what I usually like to se
 15. Setup Google Drive `open '/Applications/Google Drive.app'`
    >
    > 1. Should Mirror files in Preferences?
+16. Configure `open '/Applications/qBittorent.app'`
+    1. Preferences > BitTorrent > Enable anonymous mode
+    2. Preferences > BitTorrent > Seeding Limits
+        1. When ratio reaches 0.0 > then Pause torrent
 
 ---
 
