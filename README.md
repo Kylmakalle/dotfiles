@@ -49,6 +49,9 @@ Unfortunately, not everything can be automated, here's what I usually like to se
    4. WIFI
    5. > **TODO: figure out other**
 7. Sign-in to Chrome `open '/Applications/Google Chrome.app'`, set default.
+   1. [chrome://settings/searchEngines](chrome://settings/searchEngines)
+   2. Set Google Web as default
+   3. Name: `Google Web`, Shortcut: `@web`, URL: `{google:baseURL}search?q=%s&udm=14`
 8. Install Xcode with `open /Applications/Xcodes.app`
    1. Place Xcodes to the right of VSCode
 9. Setup Git and Github Desktop `open '/Applications/Github Desktop.app'`
