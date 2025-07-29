@@ -26,20 +26,22 @@ sudo ./setup-macos.sh
 Unfortunately, not everything can be automated, here's what I usually like to see in my environment:
 
 1. Sign in iCloud after the setup screen. For comfortable development, turn **ON** these settings:
-   1. Notes
-   2. Calendar
-   3. Reminders
-   4. Home
-   5. Shortcuts
-   6. Passwords & Keychain
+   1. Passwords & Keychain
+   2. Notes
+   3. Calendar
+   4. Reminders
+   5. Home
+   6. Shortcuts
 2. Finder:
    1. Add ~/ to Favorites
 3. Setup Biometry
-4. Dock
+4. Downloads dir in Dock
    1. Sort By > Date Added
    2. Display As > Folder
    3. View Content As > Grid
-5. Terminal > Settings > Font > Change... > **14**
+5. Terminal
+   1. Settings > Profiles > Basic > Font > Change... > **14**
+   2. View > Show Tab Bar
 6. Menu bar, position with CMD + Click, right to left:
    1. Date and Time
    2. Control Center
@@ -49,23 +51,23 @@ Unfortunately, not everything can be automated, here's what I usually like to se
 7. Sign-in to Chrome `open '/Applications/Google Chrome.app'`, set default.
 8. Install Xcode with `open /Applications/Xcodes.app`
    1. Place Xcodes to the right of VSCode
-9.  Setup Git and Github Desktop `open '/Applications/Github Desktop.app'`
+9. Setup Git and Github Desktop `open '/Applications/Github Desktop.app'`
    1. Settings > Advanced > Usage > **OFF**
 10. Setup VSCode `open '/Applications/Visual Studio Code.app'`
-   1. Log In
-   2. Bottom panel: Hide Ports
-   3. Left Panel:
-      1. Explorer
-      2. Search
-      3. Source Control
-      4. Run and Debug
-      5. Testing (optional)
-      6. Task Explorer
-   4. Move Outline and Timeline from Search to Explorer
+      1. Log In
+      2. Bottom panel: Hide Ports
+      3. Left Panel:
+         1. Explorer
+         2. Search
+         3. Source Control
+         4. Run and Debug
+         5. Testing (optional)
+         6. Task Explorer
+      4. Move Outline and Timeline from Search to Explorer
 11. Setup Raycast `open /Applications/Raycast.app`
-   1. Keybind Control + Space
-   2. Settings > General > Menu bar icon > **OFF**
-   3. Settings > General > Window Mode > Compact
+      1. Keybind Control + Space
+      2. Settings > General > Menu bar icon > **OFF**
+      3. Settings > General > Window Mode > Compact
 12. Setup Rectangle, Windows management `open /Applications/Rectangle.app`
     1. Settings > Launch on Login
     2. Settings > Hide menu bar icon
@@ -83,7 +85,7 @@ Unfortunately, not everything can be automated, here's what I usually like to se
 16. Configure `open '/Applications/qBittorent.app'`
     1. Preferences > BitTorrent > Enable anonymous mode
     2. Preferences > BitTorrent > Seeding Limits
-        1. When ratio reaches 0.0 > then Pause torrent
+        1. When ratio reaches 0.0 > then Stop torrent
 
 ---
 

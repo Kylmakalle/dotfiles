@@ -18,6 +18,11 @@ dockitems_remove:
   - Freeform
   - Music
   - Photos
+  - Keynote
+  - Numbers
+  - Pages
+  #
+  - Zoom
 
 dockitems_persist:
   - name: "Telegram Desktop"
@@ -77,6 +82,7 @@ homebrew_installed_packages:
   - rbenv
   - pyenv
   - openjdk@11
+  - openjdk@17
   - ssh-copy-id
   - openssl
   - wget
@@ -92,31 +98,34 @@ homebrew_cask_apps:
   - google-chrome
   - visual-studio-code
   - xcodes
-  - homebrew/cask-versions/github-beta
-  - homebrew/cask-versions/telegram-desktop-beta
+  - github@beta
+  - telegram-desktop@beta
   - keka
-  - docker
+  - orbstack
   - utm
-  - slack
-  - jetbrains-toolbox
+  # TODO: Workaround for pre-installed
+  # - slack
+  - android-studio
   - handbrake
   - spotify
   - mongodb-compass
   - google-drive
   - spotify
   - figma
-  - homebrew/cask-versions/qbittorrent-lt20
+  - qbittorrent@lt20
   - poedit
   - discord
-  - zoom
+  # TODO: Workaround for pre-installed
+  # - zoom
   - vlc
   - emacs
   - rectangle
   - shottr
-  - dynamic-dark-mode
-  - mountain-duck
+  - bartender
+  # TODO: dynamic-dark-mode from GitHub or self-hosted
+  # - dynamic-dark-mode
   # TODO: Wireguard client
-  # TODO: iBar alternative
+  - lulu
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

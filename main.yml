@@ -47,44 +47,46 @@
       command: "git lfs install"
       changed_when: false
 
-    - name: Ensure backup repositories in place
-      git:
-        repo: "git@github.com:Kylmakalle/{{ item }}"
-        dest: "/Users/{{ lookup('env', 'USER') }}/{{ item }}"
-      loop:
-        - backup-notes
-        - backup-reminders
-      tags: ["backup"]
+    # TODO: Use backup server instead :)
+    # Also, git is not configured at this point
+    # - name: Ensure backup repositories in place
+    #   git:
+    #     repo: "git@github.com:Kylmakalle/{{ item }}"
+    #     dest: "/Users/{{ lookup('env', 'USER') }}/{{ item }}"
+    #   loop:
+    #     - backup-notes
+    #     - backup-reminders
+    #   tags: ["backup"]
 
-    - name: Create LauchAgents directory
-      file:
-        path: "{{ ansible_env.HOME }}/Library/LaunchAgents"
-        state: directory
-        recurse: yes
-        mode: "u=rwx,g=,o="
-      tags: ["backup"]
+    # - name: Create LauchAgents directory
+    #   file:
+    #     path: "{{ ansible_env.HOME }}/Library/LaunchAgents"
+    #     state: directory
+    #     recurse: yes
+    #     mode: "u=rwx,g=,o="
+    #   tags: ["backup"]
 
-    - name: Ensure backup job definition is in place
-      ansible.builtin.template:
-        src: "{{ item }}.plist.j2"
-        dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/com.akentev.{{ item }}.plist"
-        mode: "0644"
-      vars:
-        Land: "&amp;&amp;"
-      loop:
-        - backup-notes
-        - backup-reminders
-      tags: ["backup"]
+    # - name: Ensure backup job definition is in place
+    #   ansible.builtin.template:
+    #     src: "{{ item }}.plist.j2"
+    #     dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/com.akentev.{{ item }}.plist"
+    #     mode: "0644"
+    #   vars:
+    #     Land: "&amp;&amp;"
+    #   loop:
+    #     - backup-notes
+    #     - backup-reminders
+    #   tags: ["backup"]
 
-    - name: Ensure backup job is enabled and running
-      community.general.launchd:
-        name: "com.akentev.{{ item }}"
-        state: started
-        enabled: true
-      loop:
-        - backup-notes
-        - backup-reminders
-      tags: ["backup"]
+    # - name: Ensure backup job is enabled and running
+    #   community.general.launchd:
+    #     name: "com.akentev.{{ item }}"
+    #     state: started
+    #     enabled: true
+    #   loop:
+    #     - backup-notes
+    #     - backup-reminders
+    #   tags: ["backup"]
 
     - name: Run post-provision task files in a block.
       tags: ["post"]
