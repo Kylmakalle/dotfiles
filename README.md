@@ -48,7 +48,7 @@ Unfortunately, not everything can be automated, here's what I usually like to se
    2. Set Google Web as default
    3. Name: `Google Web`, Shortcut: `@web`, URL: `{google:baseURL}search?q=%s&udm=14`
 8. Install Xcode with `open /Applications/Xcodes.app`
-   1. Place Xcodes to the right of VSCode
+   1. Place Xcode after VSCode (on the right)
 9. Setup Git and Github Desktop `open '/Applications/Github Desktop.app'`
    1. Settings > Advanced > Usage > **OFF**
 10. Setup VSCode `open '/Applications/Visual Studio Code.app'`

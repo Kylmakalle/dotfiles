@@ -44,9 +44,6 @@ dockitems_persist:
   - name: "Terminal"
     path: "/System/Applications/Utilities/Terminal.app/"
     pos: 7
-  - name: "Mail"
-    path: "/Applications/Mail.app/"
-    pos: 8
   - name: "Reminders"
     path: "/System/Applications/Reminders.app/"
     pos: 9
