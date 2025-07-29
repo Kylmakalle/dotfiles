@@ -42,12 +42,7 @@ Unfortunately, not everything can be automated, here's what I usually like to se
 5. Terminal
    1. Settings > Profiles > Basic > Font > Change... > **14**
    2. View > Show Tab Bar
-6. Menu bar, position with CMD + Click, right to left:
-   1. Date and Time
-   2. Control Center
-   3. Battery
-   4. WIFI
-   5. > **TODO: figure out other**
+6. Menu bar, position with CMD + Click. Remove "Search" from Menu Bar.
 7. Sign-in to Chrome `open '/Applications/Google Chrome.app'`, set default.
    1. [chrome://settings/searchEngines](chrome://settings/searchEngines)
    2. Set Google Web as default
@@ -89,6 +84,13 @@ Unfortunately, not everything can be automated, here's what I usually like to se
     1. Preferences > BitTorrent > Enable anonymous mode
     2. Preferences > BitTorrent > Seeding Limits
         1. When ratio reaches 0.0 > then Stop torrent
+17. Configure `open '/Applications/Bartender 5.app'`
+    1. Start at Login > **ON**
+    2. Swipe or scroll in menu bar > **OFF**
+    3. Show menu bar items in a bar below the menu bar > **ON**
+       1. Only on screens with a notch > **ON**
+    4. Bartender has a menu bar item > **ON**
+    ![](img/image.png)
 
 ---
 
