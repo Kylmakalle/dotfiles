@@ -120,6 +120,7 @@ homebrew_cask_apps:
   - shottr
   - bartender
   # TODO: dynamic-dark-mode from GitHub or self-hosted
+  # https://github.com/ApolloZhu/Dynamic-Dark-Mode/releases
   # - dynamic-dark-mode
   # TODO: Wireguard client
   - lulu
