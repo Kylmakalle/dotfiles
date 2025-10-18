@@ -84,7 +84,7 @@ Unfortunately, not everything can be automated, here's what I usually like to se
     1. Preferences > BitTorrent > Enable anonymous mode
     2. Preferences > BitTorrent > Seeding Limits
         1. When ratio reaches 0.0 > then Stop torrent
-17. Configure `open '/Applications/Bartender 5.app'`
+17. Configure `open '/Applications/Bartender 6.app'`
     1. Start at Login > **ON**
     2. Swipe or scroll in menu bar > **OFF**
     3. Show menu bar items in a bar below the menu bar > **ON**
