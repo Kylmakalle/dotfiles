@@ -33,6 +33,9 @@ else
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+echo "Exiting System Settings to apply changes..."
+killall 'System Settings' 2>/dev/null || true
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
