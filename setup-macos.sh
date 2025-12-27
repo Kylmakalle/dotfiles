@@ -282,6 +282,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# Disable Tags in Finder sidebar/context-menu
+defaults write com.apple.finder FavoriteTagNames -array
+
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
