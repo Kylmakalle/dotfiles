@@ -53,14 +53,16 @@ Unfortunately, not everything can be automated, here's what I usually like to se
    1. Settings > Advanced > Usage > **OFF**
 10. Setup VSCode `open '/Applications/Visual Studio Code.app'`
       1. Log In
-      2. Bottom panel: Hide Ports
+      2. Bottom panel
+         1. Hide Ports
+         2. Hide Problems
+         3. Hide Debug Console
       3. Left Panel:
          1. Explorer
          2. Search
          3. Source Control
          4. Run and Debug
          5. Testing (optional)
-         6. Task Explorer
       4. Move Outline and Timeline from Search to Explorer
 11. Setup Raycast `open /Applications/Raycast.app`
       1. Keybind Control + Space
@@ -80,7 +82,7 @@ Unfortunately, not everything can be automated, here's what I usually like to se
 15. Setup Google Drive `open '/Applications/Google Drive.app'`
    >
    > 1. Should Mirror files in Preferences?
-16. Configure `open '/Applications/qBittorent.app'`
+16. Configure `open '/Applications/qBittorrent.app'`
     1. Preferences > BitTorrent > Enable anonymous mode
     2. Preferences > BitTorrent > Seeding Limits
         1. When ratio reaches 0.0 > then Stop torrent
@@ -91,6 +93,10 @@ Unfortunately, not everything can be automated, here's what I usually like to se
        1. Only on screens with a notch > **ON**
     4. Bartender has a menu bar item > **ON**
     ![](img/image.png)
+18. Configure `open /Applications/LuLu.app`
+    1. Mode > Settings > No Icon Mode
+19. Configure `open /Applications/Surfshark.app`
+19. Configure `open '/Applications/WiFiMan Desktop.app'`
 
 ---
 

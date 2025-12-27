@@ -6,6 +6,7 @@ configure_dock: true
 
 dockitems_remove:
   - Launchpad
+  - Apps
   - TV
   - Podcasts
   - 'App Store'
@@ -23,6 +24,9 @@ dockitems_remove:
   - Pages
   #
   - Zoom
+  - Games
+  - Phone
+  - Mail
 
 dockitems_persist:
   - name: "Telegram Desktop"
@@ -124,6 +128,8 @@ homebrew_cask_apps:
   # - dynamic-dark-mode
   # TODO: Wireguard client
   - lulu
+  - wifiman
+  - surfshark
   # TODO: Anydesk
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
